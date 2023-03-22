@@ -1,7 +1,7 @@
-import { WebSocket, WebSocketServer } from 'ws'
-import { createHash } from 'node:crypto'
-import clientConnect from './src/client/connect.js'
-import serverConnect from './src/server/connect.js'
+// import { WebSocket, WebSocketServer } from 'ws'
+// import { createHash } from 'node:crypto'
+// import clientConnect from './src/client/connect.js'
+// import serverConnect from './src/server/connect.js'
 
 const {
         C_ASSETS,
@@ -18,8 +18,8 @@ const {
     optKeys = Object.keys( object ),
     optValues = Object.values( object ),
     client = { object, optKeys, optValues, origin, protocol, url },
-    server = { checkOrigin, key, port },
-    ws = {}
-
-ws.c = await clientConnect( WebSocket, ws, client )
-ws.s = serverConnect( WebSocketServer, ws, createHash, server )
+    server = { checkOrigin, key, port }//,
+//     ws = {}
+console.log(client, '\n\n', server)
+// ws.c = await clientConnect( WebSocket, ws, client )
+// ws.s = serverConnect( WebSocketServer, ws, createHash, server )
