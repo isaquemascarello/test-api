@@ -1,3 +1,4 @@
+import { createServer } from 'node:http'
 // import { WebSocket, WebSocketServer } from 'ws'
 // import { createHash } from 'node:crypto'
 // import clientConnect from './src/client/connect.js'
@@ -20,6 +21,11 @@ const {
     client = { object, optKeys, optValues, origin, protocol, url },
     server = { checkOrigin, key, port }//,
 //     ws = {}
-console.log(client, '\n\n', server)
+
 // ws.c = await clientConnect( WebSocket, ws, client )
 // ws.s = serverConnect( WebSocketServer, ws, createHash, server )
+createServer(( req, res ) => {
+
+    res.end(JSON.stringify({ client, server }))
+})
+    .listen( port )
